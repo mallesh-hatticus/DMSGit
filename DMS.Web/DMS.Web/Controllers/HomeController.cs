@@ -8,7 +8,10 @@ namespace DMS.Web.Controllers
 {
     public class HomeController : Controller
     {
-
+        public ActionResult getdata()
+        {
+            return View();
+        }
 
 
         public ActionResult Index()
