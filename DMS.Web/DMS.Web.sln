@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMS.Business", "..\DMS.Busi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMS.Common", "..\DMS.Common\DMS.Common.csproj", "{9761608E-FDD0-4D65-8E8D-88517EEE602B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMS.Constaints", "..\DMS.Constaints\DMS.Constaints.csproj", "{6ECCA84D-B251-4F0F-89D8-D78A86C0BED2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMS.Constat", "..\DMS.Constaints\DMS.Constat.csproj", "{6ECCA84D-B251-4F0F-89D8-D78A86C0BED2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,5 +48,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45
 	EndGlobalSection
 EndGlobal
