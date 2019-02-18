@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace DMS.EntityLayer
 {
-    public class User:PrimaryEntity
+    public class Usr_Register:PrimaryEntity
     {
-        public string UserName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; } 
     }
 }

@@ -157,12 +157,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -209,7 +207,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DMS.DataAccess\DMS.DataAccess.csproj">
+      <Project>{ad5ecddc-61c9-4bd4-9161-1871f955a21a}</Project>
+      <Name>DMS.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DMS.EntityLayer\DMS.EntityLayer.csproj">
+      <Project>{aa77bc38-9cf9-4402-9f26-f8a6bfb7cb92}</Project>
+      <Name>DMS.EntityLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

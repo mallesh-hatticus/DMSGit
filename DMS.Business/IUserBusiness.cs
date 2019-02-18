@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DMS.EntityLayer
+namespace DMS.Business
 {
-    public class User:PrimaryEntity
+    public interface IUserBusiness
     {
-        public string UserName { get; set; }
     }
 }
