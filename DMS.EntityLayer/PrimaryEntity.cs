@@ -15,5 +15,7 @@ namespace DMS.EntityLayer
         public string UsrName { get; set; }
         public int RoleID { get; set; }
         public int ShiftID { get; set; }
+        public int ErrorCode { get; set; }
+        public string RespMsg { get; set; }
     }
 }

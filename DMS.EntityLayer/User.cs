@@ -9,5 +9,6 @@ namespace DMS.EntityLayer
     public class User:PrimaryEntity
     {
         public string UserName { get; set; }
+        public string password { get; set; }
     }
 }
