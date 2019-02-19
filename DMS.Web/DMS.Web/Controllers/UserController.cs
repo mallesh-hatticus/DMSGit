@@ -30,7 +30,7 @@ namespace DMS.Web.Controllers
         {
             try
             {
-               
+                var mall=0;
                 int x = 0, y = 20;
                 int sum = y / x;
             }
