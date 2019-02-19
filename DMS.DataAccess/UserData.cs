@@ -8,14 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using DMS.Constat;
 using System.Data;
+using NLog;
 
 namespace DMS.DataAccess
 {
     public class UserData : IUserData
     {
-
-        public static void InsertProduct(User UserObj)
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+        public User InsertProduct(User UserObj)
         {
+
             Database database = null;
             DbCommand dbCommand = null;
             try
@@ -41,12 +43,14 @@ namespace DMS.DataAccess
                 }
                 else
                 {
-
+                    logger.Error("This is an error message"); 
                 }
 
             }
             catch (Exception ex)
             {
+                
+                logger.Error(ex.Message);
                 throw ex;
             }
             finally
@@ -54,6 +58,8 @@ namespace DMS.DataAccess
                 database = null;
 
             }
+
+            return UserObj;
         }
     }
 }

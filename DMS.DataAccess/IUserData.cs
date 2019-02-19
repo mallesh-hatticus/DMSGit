@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DMS.EntityLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace DMS.DataAccess
 {
   public  interface IUserData
     {
+      User InsertProduct(User UserObj);
     }
 }
