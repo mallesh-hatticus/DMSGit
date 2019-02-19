@@ -30,9 +30,9 @@ namespace DMS.Web.Controllers
         {
             try
             {
-                logger.Error("mallesh");
-                //int x = 0, y = 20;
-                //int sum = y/ x;
+               
+                int x = 0, y = 20;
+                int sum = y / x;
             }
             catch(Exception ex)
             {
