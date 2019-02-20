@@ -1,0 +1,64 @@
+﻿@model DMS.EntityLayer.Login
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/DMS/LoginStyle.css" rel="stylesheet" />
+</head>
+<body id="LoginForm">
+    <div class="container">
+        <h1 class="form-heading">login Form</h1>
+        <div class="login-form">
+            <div class="main-div">
+                <div class="panel">
+                    <h2>Admin Login</h2>
+                    <p>@Html.ValidationSummary(true)</p>
+                   
+                </div>
+                @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "Login" }))
+                {
+                    @Html.AntiForgeryToken()
+                     <p class="text-danger">@Html.ValidationMessageFor(model => model.Log_Email)</p>
+    <p class="text-danger">@Html.ValidationMessageFor(model => model.Log_Pwd)</p>
+                    <div class="form-group">
+
+                        @*<input type="email" class="form-control" id="inputEmail" placeholder="Email Address">*@
+                        @Html.TextBoxFor(model => model.Log_Email, new { @class = "form-control", placeholder = "Email Address" })
+                    </div>
+                    <div class="form-group">
+
+                        @*<input type="password" class="form-control" id="inputPassword" placeholder="Password">*@
+                        @Html.TextBoxFor(model => model.Log_Pwd, new { @class = "form-control", placeholder = "Password",@type="password" })
+
+                    </div>
+                    <div class="forgot">
+                        <a href="reset.html">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+
+
+
+                }
+
+            </div>
+        </div>
+    </div>
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")*@
+
+
+
+
+    
+</body>
+</html>

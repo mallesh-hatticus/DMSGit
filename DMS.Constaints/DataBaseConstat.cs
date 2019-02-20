@@ -9,7 +9,7 @@ namespace DMS.Constat
     public static class DdataLayerConstat
     {
         /*DB connection*/
-        public static string ConnectionString = "CommunityConnectionString";
+        public static string ConnectionString = "DMS";
 
 
         /*store procedure*/

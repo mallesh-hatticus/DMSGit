@@ -25,9 +25,12 @@ namespace DMS.DataAccess
                 DatabaseProviderFactory factory = new DatabaseProviderFactory();
                 database = factory.Create(DdataLayerConstat.ConnectionString);
                 dbCommand = database.GetStoredProcCommand(DdataLayerConstat.DMS_sp_adduser);
-                database.AddInParameter(dbCommand, DdataLayerConstat.usrname, DbType.String, UserObj.UserName);
+                database.AddInParameter(dbCommand, DdataLayerConstat.usrname, DbType.String, UserObj.UsrName);
                 database.AddInParameter(dbCommand, DdataLayerConstat.email, DbType.String, UserObj.UsrEmail);
                 database.AddInParameter(dbCommand, DdataLayerConstat.pwd, DbType.String, UserObj.password);
+                database.AddOutParameter(dbCommand, DdataLayerConstat.error_code, DbType.Int32, default(int));
+                database.AddOutParameter(dbCommand, DdataLayerConstat.error_message, DbType.String, 500);
+
                 database.ExecuteNonQuery(dbCommand);
 
 

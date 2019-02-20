@@ -5,41 +5,78 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DMS.EntityLayer;
 
 namespace DMS.Web.Controllers
 {
     public class UserController : Controller
     {
 
-         
+
 
         private readonly IUserBusiness _IUserBusiness;
 
-        public UserController(): this (new UserBusiness()){}
+        public UserController() : this(new UserBusiness()) { }
 
         public UserController(IUserBusiness IUserBusiness)
         {
-            _IUserBusiness=IUserBusiness;
+            _IUserBusiness = IUserBusiness;
         }
 
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
-        //
-        // GET: /User/
-        public ActionResult Index()
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login(Login ObjLogedUsr)
         {
             try
             {
-                var mall=0;
-                int x = 0, y = 20;
-                int sum = y / x;
+                if (ModelState.IsValid)
+                {
+                    return RedirectToAction("Success");
+                }
+                else
+                {
+                    //ModelState.AddModelError(string.Empty, "The item cannot be removed");
+                    return View(ObjLogedUsr);
+                }
+
             }
-            catch(Exception ex)
+            catch
+            {
+                return View();
+            }
+        }
+
+
+        public ActionResult Success()
+        {
+            return View();
+        }
+
+        public ActionResult Registration_Page()
+        {
+            try
+            {
+                User objuser = new User();
+                objuser.UsrName = "santosh";
+                objuser.password = "abc123";
+                objuser.UsrEmail = "santosh@gmail.comm";
+
+
+
+                objuser = _IUserBusiness.InsertProduct(objuser);
+            }
+            catch (Exception ex)
             {
                 logger.Error(ex.Message);
             }
-          
+
             return View();
         }
-	}
+    }
 }
