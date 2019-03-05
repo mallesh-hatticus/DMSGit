@@ -10,5 +10,7 @@ namespace DMS.Business
     public interface IUserBusiness
     {
         User InsertProduct(User UserObj);
+
+        User ValidateLoggedUsr(Login ObjLogin);
     }
 }

@@ -34,5 +34,20 @@ namespace DMS.Business
             return UserObj;
         }
 
+        public User ValidateLoggedUsr(Login ObjLogin)
+        {
+            User ObjUser = null;
+            ObjUser = new User();
+            try
+            {
+                ObjUser = _IUserData.ValidateLoggedUsr(ObjLogin);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            return ObjUser;
+        }
+
     }
 }

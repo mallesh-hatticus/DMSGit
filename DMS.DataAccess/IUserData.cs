@@ -10,5 +10,6 @@ namespace DMS.DataAccess
   public  interface IUserData
     {
       User InsertProduct(User UserObj);
+      User ValidateLoggedUsr(Login ObjLogin);
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DMS.EntityLayer;
+using DMS.Constat;
 
 namespace DMS.Web.Controllers
 {
@@ -31,18 +32,34 @@ namespace DMS.Web.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Login(Login ObjLogedUsr)
+        public ActionResult Login(Login ObjLoginvalidate)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    return RedirectToAction("Success");
+                    User objloggedusr = new User();
+                    objloggedusr = _IUserBusiness.ValidateLoggedUsr(ObjLoginvalidate);
+                    ObjLoginvalidate.RespMsg = ObjLoginvalidate.RespMsg;
+                    if (objloggedusr.RespMsg.ToLower() == WebConstat.success.ToLower())
+                    {
+                        return RedirectToAction("Success");
+
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, objloggedusr.RespMsg);
+                        return View(ObjLoginvalidate);
+                      
+                    }
+                   
+
+
                 }
                 else
                 {
                     //ModelState.AddModelError(string.Empty, "The item cannot be removed");
-                    return View(ObjLogedUsr);
+                    return View(ObjLoginvalidate);
                 }
 
             }

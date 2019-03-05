@@ -232,6 +232,10 @@
       <Project>{2dbc7961-30c4-4136-bcbd-6aee76ba048a}</Project>
       <Name>DMS.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\DMS.Constaints\DMS.Constat.csproj">
+      <Project>{6ecca84d-b251-4f0f-89d8-d78a86c0bed2}</Project>
+      <Name>DMS.Constat</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\DMS.EntityLayer\DMS.EntityLayer.csproj">
       <Project>{aa77bc38-9cf9-4402-9f26-f8a6bfb7cb92}</Project>
       <Name>DMS.EntityLayer</Name>

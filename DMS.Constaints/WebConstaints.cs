@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace DMS.Constat
 {
-    class WebConstat
+    public static class WebConstat
     {
+        public static string success = "success";
+        public static string RespMsg = "RespMsg";
     }
 }
