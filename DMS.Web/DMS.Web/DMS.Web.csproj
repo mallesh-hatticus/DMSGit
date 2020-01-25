@@ -201,6 +201,16 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="SQL\dbo.DMMS_sp_LoggedUsr.StoredProcedure.sql" />
+    <Content Include="SQL\dbo.DMST_Menus.Table.sql" />
+    <Content Include="SQL\dbo.DMST_MenuTypes.Table.sql" />
+    <Content Include="SQL\dbo.DMST_ProjectDetails.Table.sql" />
+    <Content Include="SQL\dbo.DMST_ProjectType.Table.sql" />
+    <Content Include="SQL\dbo.DMST_User.Table.sql" />
+    <Content Include="SQL\dbo.DMST_UsrRole.Table.sql" />
+    <Content Include="SQL\dbo.DMS_sp_adduser.StoredProcedure.sql" />
+    <Content Include="SQL\dbo.F_SPLIT.UserDefinedFunction.sql" />
+    <Content Include="SQL\DMS.Database.sql" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
