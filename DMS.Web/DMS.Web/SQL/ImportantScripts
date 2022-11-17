@@ -1,0 +1,11 @@
+
+  ;with rownums as         
+(select m.*,         
+ row_number() over(partition by Text        
+ order by Text) as rnum        
+ from @TRK_Steps m)        
+delete r        
+from rownums r        
+where rnum > 1   
+
+select * from  @TRK_Steps
